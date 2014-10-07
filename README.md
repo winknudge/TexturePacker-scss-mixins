@@ -9,7 +9,7 @@ This exporter is for [TexturePacker](http://www.texturepacker.com/) it exports s
 
 1. cd into the directory you selected
 	
-	'cd ~/.texture-packer-export'
+	`cd ~/.texture-packer-export`
 
 1. Clone the Exporter into your exporter directory
 
