@@ -10,6 +10,9 @@
 
 {% for sprite in allSprites %}
 //use @include sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}};
+//{{variantIndex}}
+//{{variantParams.maxTextureSize.width}}
+{{variantParams.maxTextureSize.width|setWidth}}
 
 @mixin sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}}($path: './') {
     display: inline-block ;
