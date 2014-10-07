@@ -1,0 +1,23 @@
+//
+// 	
+// Original SASS / css sprite mixins - created with http://www.codeandweb.com/texturepacker
+// exporter created by Rob Moorman
+//
+// Updated SCSS sprite exporter created by Tomm Warham - Wink Nudge http://www.winknudge.co.uk
+//
+// {{smartUpdateKey}}
+// {{settings}}
+
+{% for sprite in allSprites %}
+//use @include sprite-{{sprite.trimmedName}}
+
+@mixin sprite-{{sprite.trimmedName}}($path: './') {
+    display: inline-block ;
+    overflow: hidden ;
+    width: {{sprite.frameRect.width}}px ;
+    height: {{sprite.frameRect.height}}px ;
+    background-repeat: no-repeat ;
+    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
+    background-position: -{{sprite.frameRect.x}}px -{{sprite.frameRect.y}}px ;
+        }
+{% endfor %}

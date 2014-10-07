@@ -1,0 +1,57 @@
+<exporter version="1.0">
+    <!-- identifier of the exporter -->
+    <name>wn-scss-mixins</name>
+
+    <!-- for compatiblility only: allow referencing the exporter as "sass-mixins" -->
+    <nameAlias>wn-scss-mixins</nameAlias>
+
+    <!-- display name of the exporter for the combo box -->
+    <displayName>WN SCSS Mixins (css)</displayName>
+	
+    <!-- description of the exporter -->
+    <description>Exporter for SCSS.</description>
+
+    <!-- exporter version -->
+    <version>0.1</version>
+	
+    <!-- currently only one file allowed - more to come with update -->
+    <files>
+        <file>
+            <!-- name of this file variable -->
+            <name>scss</name>
+
+            <!-- human readable name (for GUI) -->
+            <displayName>SCSS</displayName>
+
+            <!-- file extension for the file -->
+            <fileExtension>scss</fileExtension>
+
+            <!-- description what the file contains, used in tooltips in the GUI -->
+            <description>SCSS file containing sprite definitions</description>
+
+            <!-- name of the template file -->
+            <template>mixins.scss</template>
+        </file>
+    </files>
+
+    <!-- target framework supports trimming -->
+    <supportsTrimming>false</supportsTrimming>
+
+    <!-- target framework supports rotated sprites -->
+    <supportsRotation>false</supportsRotation>
+
+    <!-- rotated sprites direction (cw/ccw) -->
+    <rotationDirection>cw</rotationDirection>
+
+    <!-- supports npot sizes -->
+    <supportsNPOT>true</supportsNPOT>
+
+    <!-- supports file name stripping (remove .png etc) -->
+    <supportsTrimSpriteNames>yes</supportsTrimSpriteNames>
+
+    <!-- supports texure subpath -->
+    <supportsTextureSubPath>yes</supportsTextureSubPath>
+
+</exporter>
+
+
