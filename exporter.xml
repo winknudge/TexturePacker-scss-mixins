@@ -12,7 +12,7 @@
     <description>Exporter for SCSS.</description>
 
     <!-- exporter version -->
-    <version>0.1</version>
+    <version>1.0</version>
 	
     <!-- currently only one file allowed - more to come with update -->
     <files>

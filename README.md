@@ -30,4 +30,8 @@ The cli flag for this exporter is "wn-scss-mixins"
 
 ---
 
-## Created by [WinkNudge](http://winknudge.co.uk/)  ##
+## Credits ##
+
+Original packaged SASS exporter by Rob Moorman 
+
+Updated scss version by [WinkNudge](http://winknudge.co.uk/)
