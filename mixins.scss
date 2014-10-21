@@ -6,15 +6,15 @@
 // Updated SCSS sprite exporter created by Tomm Warham - Wink Nudge http://www.winknudge.co.uk
 //
 // {{smartUpdateKey}}
-// {{settings}}
 
 {% for sprite in allSprites %}
-//use @include sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}};
-//{{variantIndex}}
-//{{variantParams.maxTextureSize.width}}
 {{variantParams.maxTextureSize.width|setWidth}}
+//use @include sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}};
+//
+//{{variantIndex}} - scale variant
 
 @mixin sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}}($path: './') {
+	background-size: ({{texture.size.width}}px/{{variantIndex|isMobileRatio}}) auto;
     display: inline-block ;
     overflow: hidden ;
     width: {{sprite.frameRect.width}}px ;
