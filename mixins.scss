@@ -17,10 +17,10 @@
 	background-size: ({{texture.size.width}}px/{{variantIndex|isMobileRatio}}) auto;
     display: inline-block ;
     overflow: hidden ;
-    width: {{sprite.frameRect.width}}px ;
-    height: {{sprite.frameRect.height}}px ;
+    width: ({{sprite.frameRect.width}}px/{{variantIndex|isMobileRatio}}) ;
+    height: ({{sprite.frameRect.height}}px/{{variantIndex|isMobileRatio}}) ;
     background-repeat: no-repeat ;
     background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
-    background-position: -{{sprite.frameRect.x}}px -{{sprite.frameRect.y}}px ;
+    background-position: (-{{sprite.frameRect.x}}px/{{variantIndex|isMobileRatio}}) (-{{sprite.frameRect.y}}px/{{variantIndex|isMobileRatio}}) ;
         }
 {% endfor %}
