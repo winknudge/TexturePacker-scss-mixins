@@ -1,5 +1,5 @@
 // {% load functions %}
-// 	
+//
 // Original SASS / css sprite mixins - created with http://www.codeandweb.com/texturepacker
 // exporter created by Rob Moorman
 //
@@ -8,7 +8,7 @@
 // {{smartUpdateKey}}
 
 {% for sprite in allSprites %}
-{{variantParams.maxTextureSize.width|setWidth}}
+{{variantParams.maxTextureSize.height|setWidth}}
 //use @include sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}};
 //
 //{{variantIndex}} - scale variant

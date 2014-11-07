@@ -12,7 +12,7 @@ var whichRes = function(input)
 {
   // var input = input.rawString();
 
-  if (width == 2048) {
+  if (width == 1024) {
     return String("-mobile");
   } else if (input == 0) {
     return String("-hi-res");
@@ -32,7 +32,7 @@ var isMobileRatio = function(input)
 {
   // var input = input.rawString();
 
-  if (width == 2048) {
+  if (width == 1024) {
     return String("2");
   } else {
     return String("1");
