@@ -1,5 +1,5 @@
 width=1;
- 
+
 var SetWidth = function(input)
 {
     width=input; // store the value
@@ -12,7 +12,7 @@ var whichRes = function(input)
 {
   // var input = input.rawString();
 
-  if (width == 1024) {
+  if (width == 2048) {
     return String("-mobile");
   } else if (input == 0) {
     return String("-hi-res");
@@ -32,7 +32,7 @@ var isMobileRatio = function(input)
 {
   // var input = input.rawString();
 
-  if (width == 1024) {
+  if (width == 2048) {
     return String("2");
   } else {
     return String("1");
