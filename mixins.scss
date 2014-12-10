@@ -11,7 +11,7 @@
 {% for sprite in allSprites %}
 //use @include sprite-{{sprite.trimmedName}}
 
-@mixin sprite-{{sprite.trimmedName}}($path: '{{settings.textureSubPath}}') {
+@mixin sprite-{{sprite.trimmedName}}($path: '') {
     display: inline-block ;
     overflow: hidden ;
     width: {{sprite.frameRect.width}}px ;
