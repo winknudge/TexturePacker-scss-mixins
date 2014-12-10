@@ -10,14 +10,28 @@
 
 {% for sprite in allSprites %}
 //use @include sprite-{{sprite.trimmedName}}
+    @if $old-ie {
+        // @content;
+        @mixin sprite-{{sprite.trimmedName}}($path: '') {
+		    display: inline-block ;
+		    overflow: hidden ;
+		    width: {{sprite.frameRect.width}}px ;
+		    height: {{sprite.frameRect.height}}px  ;
+		    background-repeat: no-repeat ;
+		    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
+		    background-position: -{{sprite.frameRect.x}}px -{{sprite.frameRect.y}}px ;
+		    debug: IE;
+		}
+    } @else {
+        @mixin sprite-{{sprite.trimmedName}}($path: '') {
+		    display: inline-block ;
+		    overflow: hidden ;
+		    width: {{sprite.frameRect.width}}px / 2 ;
+		    height: {{sprite.frameRect.height}}px / 2 ;
+		    background-repeat: no-repeat ;
+		    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
+		    background-position: -{{sprite.frameRect.x}}px -{{sprite.frameRect.y}}px ;
+		}
+    }
 
-@mixin sprite-{{sprite.trimmedName}}($path: '') {
-    display: inline-block ;
-    overflow: hidden ;
-    width: {{sprite.frameRect.width}}px ;
-    height: {{sprite.frameRect.height}}px ;
-    background-repeat: no-repeat ;
-    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
-    background-position: -{{sprite.frameRect.x}}px -{{sprite.frameRect.y}}px ;
-        }
 {% endfor %}
