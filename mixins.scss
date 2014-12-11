@@ -18,19 +18,20 @@
 		    width: {{sprite.frameRect.width}}px ;
 		    height: {{sprite.frameRect.height}}px  ;
 		    background-repeat: no-repeat ;
-		    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
+		    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.trimmedName}}IE.png') ;
 		    background-position: -{{sprite.frameRect.x}}px -{{sprite.frameRect.y}}px ;
 		    debug: IE;
 		}
     } @else {
         @mixin sprite-{{sprite.trimmedName}}($path: '') {
+        	background-size: ({{texture.size.width}}px/2) auto;
 		    display: inline-block ;
 		    overflow: hidden ;
-		    width: {{sprite.frameRect.width}}px / 2 ;
-		    height: {{sprite.frameRect.height}}px / 2 ;
+		    width: ({{sprite.frameRect.width}}px / 2 ) ;
+		    height: ({{sprite.frameRect.height}}px / 2 );
 		    background-repeat: no-repeat ;
 		    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
-		    background-position: -{{sprite.frameRect.x}}px -{{sprite.frameRect.y}}px ;
+		    background-position: (-{{sprite.frameRect.x}}px/2) (-{{sprite.frameRect.y}}px/2) ;
 		}
     }
 
