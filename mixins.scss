@@ -1,38 +1,28 @@
+// {% load functions %}
 //
-// 	
 // Original SASS / css sprite mixins - created with http://www.codeandweb.com/texturepacker
 // exporter created by Rob Moorman
 //
 // Updated SCSS sprite exporter created by Tomm Warham - Wink Nudge http://www.winknudge.co.uk
 //
 // {{smartUpdateKey}}
-// {{settings}}
 
 {% for sprite in allSprites %}
-//use @include sprite-{{sprite.trimmedName}}
-    @if $old-ie {
-        // @content;
-        @mixin sprite-{{sprite.trimmedName}}($path: '') {
-		    display: inline-block ;
-		    overflow: hidden ;
-		    width: {{sprite.frameRect.width}}px ;
-		    height: {{sprite.frameRect.height}}px  ;
-		    background-repeat: no-repeat ;
-		    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.trimmedName}}IE.png') ;
-		    background-position: -{{sprite.frameRect.x}}px -{{sprite.frameRect.y}}px ;
-		    debug: IE;
-		}
-    } @else {
-        @mixin sprite-{{sprite.trimmedName}}($path: '') {
-        	background-size: ({{texture.size.width}}px/2) auto;
-		    display: inline-block ;
-		    overflow: hidden ;
-		    width: ({{sprite.frameRect.width}}px / 2 ) ;
-		    height: ({{sprite.frameRect.height}}px / 2 );
-		    background-repeat: no-repeat ;
-		    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
-		    background-position: (-{{sprite.frameRect.x}}px/2) (-{{sprite.frameRect.y}}px/2) ;
-		}
-    }
+{{variantParams.maxTextureSize.height|setWidth}}
+//use @include sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}};
+//
+//{{variantIndex}} - scale variant
+
+@mixin sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}}($path: './') {
+	background-size: ({{texture.size.width}}px/{{variantIndex|isMobileRatio}}) auto;
+    display: inline-block ;
+    overflow: hidden ;
+    width: ({{sprite.frameRect.width}}px/{{variantIndex|isMobileRatio}}) ;
+    height: ({{sprite.frameRect.height}}px/{{variantIndex|isMobileRatio}}) ;
+    background-repeat: no-repeat ;
+    background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
+    background-position: (-{{sprite.frameRect.x}}px/{{variantIndex|isMobileRatio}}) (-{{sprite.frameRect.y}}px/{{variantIndex|isMobileRatio}}) ;
+        }
+
 
 {% endfor %}
