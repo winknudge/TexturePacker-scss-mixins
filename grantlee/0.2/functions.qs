@@ -12,12 +12,10 @@ var whichRes = function(input)
 {
   // var input = input.rawString();
 
-  if (width == 1024) {
-    return String("-mobile");
-  } else if (input == 0) {
-    return String("-hi-res");
+if (input == 1) {
+    return String("Retina Size scaling done in CSS");
   } else {
-    return String("-standard-res");
+    return String("IE image size scaling done in TP");
   }
 };
 
@@ -32,7 +30,7 @@ var isMobileRatio = function(input)
 {
   // var input = input.rawString();
 
-  if (width == 1024) {
+  if (input == 1) {
     return String("2");
   } else {
     return String("1");

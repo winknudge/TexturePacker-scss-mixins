@@ -12,8 +12,8 @@
 //use @include sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}};
 //
 //{{variantIndex}} - scale variant
-
-@mixin sprite-{{sprite.trimmedName}}{{variantIndex|whichRes}}($path: './') {
+//{{variantIndex|whichRes}}
+@mixin sprite-{{sprite.trimmedName}}($path: './') {
 	background-size: ({{texture.size.width}}px/{{variantIndex|isMobileRatio}}) auto;
     display: inline-block ;
     overflow: hidden ;
