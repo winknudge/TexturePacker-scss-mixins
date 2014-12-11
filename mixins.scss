@@ -23,4 +23,5 @@
     background-image: url('#{$path}{{settings.textureSubPath}}{{texture.fullName}}') ;
     background-position: (-{{sprite.frameRect.x}}px/{{variantIndex|isMobileRatio}}) (-{{sprite.frameRect.y}}px/{{variantIndex|isMobileRatio}}) ;
         }
+
 {% endfor %}
